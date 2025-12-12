@@ -51,7 +51,7 @@ function Footer() {
           <ul className="mt-4 space-y-3 text-sm">
             <li className="flex items-start gap-2">
               <Mail size={16} className="mt-0.5 text-purple-400" />
-              support@laraibquran.com
+              laraibonlinequranacadmy@gmail.com
             </li>
             <li className="flex items-start gap-2">
               <PhoneCall size={16} className="mt-0.5 text-purple-400" />

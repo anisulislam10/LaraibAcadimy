@@ -53,7 +53,7 @@ function Contact() {
               <Mail className="text-purple-400" size={18} />
               <div>
                 <p className="font-semibold text-white">Email</p>
-                <p className="text-slate-300">support@laraibquran.com</p>
+                <p className="text-slate-300">laraibonlinequranacadmy@gmail.com</p>
               </div>
             </div>
             <div className="flex items-start gap-2 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm px-3 py-3">
@@ -130,7 +130,7 @@ function Contact() {
           <div className="mt-6 space-y-3 rounded-2xl border border-purple-500/20 bg-purple-500/10 backdrop-blur-sm p-4 text-sm text-purple-50">
             <p className="font-semibold text-white">Support info</p>
             <p>WhatsApp: 03265757534 (quickest)</p>
-            <p>Email: support@laraibquran.com</p>
+            <p>Email: laraibonlinequranacadmy@gmail.com</p>
             <p>Office hours: 9 AM – 11 PM (GMT+5)</p>
             <p className="text-xs text-purple-300/70 pt-2">
               Note: Form submissions are sent directly to WhatsApp for fastest response

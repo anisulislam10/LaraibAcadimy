@@ -35,7 +35,7 @@ function Support() {
             <MessageCircle size={18} className="text-purple-300" /> WhatsApp: +92 326 5757534
           </div>
           <div className="flex items-center gap-2">
-            <Mail size={18} className="text-purple-300" /> support@laraibquran.com
+            <Mail size={18} className="text-purple-300" /> laraibonlinequranacadmy@gmail.com
           </div>
           <div className="flex items-center gap-2">
             <Headphones size={18} className="text-purple-300" /> Parent calls every Friday
