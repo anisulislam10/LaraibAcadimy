@@ -42,7 +42,11 @@ const Footer = memo(() => {
         <div>
           <div className="flex items-center gap-3">
             <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-br from-violet-500 via-purple-500 to-fuchsia-500 text-white font-black shadow-lg shadow-purple-500/30 ring-2 ring-purple-500/20">
-              LO
+                   <img 
+      src="/logo.jpeg" 
+      alt="Laraib Quran Academy Logo" 
+      className="h-full w-full object-object-cover rounded-2xl"
+    /> 
             </div>
             <div className="leading-tight">
               <p className="text-sm uppercase tracking-[0.2em] text-purple-300">Laraib</p>
