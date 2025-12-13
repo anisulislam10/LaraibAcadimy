@@ -2,7 +2,7 @@ const faqs = [
   {
     question: 'Do you offer a free trial?',
     answer:
-      'Yes, every new student receives one-day free trial classes. You can test the tutor, timing, and internet quality before enrolling.',
+      'Yes, every new student receives Three-day free trial classes. You can test the tutor, timing, and internet quality before enrolling.',
   },
   {
     question: 'Are both male and female tutors available?',

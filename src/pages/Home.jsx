@@ -1,23 +1,21 @@
 import { memo, useMemo, useCallback, lazy, Suspense, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { ShieldCheck, Clock, Award, MessageCircle, Sparkles } from 'lucide-react'
+import { ShieldCheck, Clock, Award, MessageCircle, Sparkles, Users } from 'lucide-react'
 import { CheckBadgeIcon } from '@heroicons/react/24/outline'
 
-// Regular imports (they're already bundled, no need for dynamic imports here)
+// Regular imports
 import courses from '../data/courses'
 import testimonials from '../data/testimonials'
 
-// Lazy load heavy components only
+// Lazy load heavy components
 const Button = lazy(() => import('../components/Button'))
 const CourseCard = lazy(() => import('../components/CourseCard'))
 const TestimonialCard = lazy(() => import('../components/TestimonialCard'))
 
 function Home() {
-  // Use regular useMemo with the already imported data
   const featured = useMemo(() => courses.slice(0, 3), [])
   
-  // Memoize WhatsApp URLs to prevent recalculations
   const { trialWhatsappUrl, inquiryWhatsappUrl } = useMemo(() => {
     const trialMessage = encodeURIComponent("Assalamu Alaikum, I am interested in booking a free trial class with Laraib Online Quran Academy. Could you please assist me with scheduling?")
     const inquiryMessage = encodeURIComponent("Assalamu Alaikum, I would like to inquire about Quran classes at Laraib Online Quran Academy. Could you provide me with more information about course offerings and schedules?")
@@ -28,7 +26,6 @@ function Home() {
     }
   }, [])
 
-  // Optimized WhatsApp popup with useCallback
   const openWhatsAppPopup = useCallback(() => {
     const width = 600
     const height = 700
@@ -42,43 +39,37 @@ function Home() {
     )
   }, [inquiryWhatsappUrl])
 
-  // Memoize feature items to prevent re-renders
   const featureItems = useMemo(() => [
-    { title: 'Certified instructor', note: 'Ijazah qualified Hafiza', icon: ShieldCheck },
+    { title: 'Certified Teachers', note: 'Qualified male & female instructors', icon: Users },
     { title: 'Progress tracking', note: 'Weekly reports + recordings', icon: Award },
     { title: 'Flexible timings', note: 'Across all time zones', icon: Clock },
     { title: 'Parent updates', note: 'Monthly call for kids', icon: MessageCircle },
   ], [])
 
-  // SEO: Optimized useEffect with cleanup
+  // Updated SEO metadata
   useEffect(() => {
-    // Set page title
-    document.title = 'Learn Quran Online with Certified Female Teacher - Laraib Online Quran Academy'
+    document.title = 'Learn Quran Online with Certified Teachers - Laraib Online Quran Academy'
     
-    // Batch DOM updates
     const metaUpdates = []
     
-    // Update meta description
     let metaDescription = document.querySelector('meta[name="description"]')
     if (!metaDescription) {
       metaDescription = document.createElement('meta')
       metaDescription.name = 'description'
       document.head.appendChild(metaDescription)
     }
-    metaDescription.content = 'One-on-one Quran classes with female Hafiza instructor. Free trial, flexible timings, Tajweed focused. Join students from 15+ countries worldwide.'
+    metaDescription.content = 'One-on-one Quran classes with qualified male and female teachers. Free trial, flexible timings, Tajweed focused. Join students from 15+ countries worldwide.'
     metaUpdates.push(metaDescription)
     
-    // Update meta keywords
     let metaKeywords = document.querySelector('meta[name="keywords"]')
     if (!metaKeywords) {
       metaKeywords = document.createElement('meta')
       metaKeywords.name = 'keywords'
       document.head.appendChild(metaKeywords)
     }
-    metaKeywords.content = 'online quran classes, female quran teacher, learn quran online, quran for kids, adult quran lessons, tajweed classes, quran memorization, islamic studies'
+    metaKeywords.content = 'online quran classes, quran teachers, learn quran online, quran for kids, adult quran lessons, tajweed classes, male quran teacher, female quran teacher'
     metaUpdates.push(metaKeywords)
     
-    // Add canonical link
     let canonical = document.querySelector('link[rel="canonical"]')
     if (!canonical) {
       canonical = document.createElement('link')
@@ -88,7 +79,6 @@ function Home() {
     canonical.href = window.location.href
     metaUpdates.push(canonical)
     
-    // Combine all structured data into one script
     const schemaScript = document.createElement('script')
     schemaScript.type = 'application/ld+json'
     schemaScript.innerHTML = JSON.stringify([
@@ -96,7 +86,7 @@ function Home() {
         "@context": "https://schema.org",
         "@type": "EducationalOrganization",
         "name": "Laraib Online Quran Academy",
-        "description": "Online Quran learning platform with certified female Hafiza instructor",
+        "description": "Online Quran learning platform with certified male and female Quran teachers",
         "url": window.location.origin,
         "telephone": "+923265757534",
         "email": "contact@laraibquranacademy.com",
@@ -104,11 +94,20 @@ function Home() {
           "@type": "VirtualLocation",
           "description": "Online classes available worldwide"
         },
-        "founder": {
-          "@type": "Person",
-          "name": "Laraib",
-          "jobTitle": "Certified Hafiza & Quran Teacher"
-        },
+        "employee": [
+          {
+            "@type": "Person",
+            "name": "Laraib",
+            "jobTitle": "Certified Hafiza & Quran Teacher",
+            "gender": "Female"
+          },
+          {
+            "@type": "Person",
+            "name": "Certified Male Teachers",
+            "jobTitle": "Quran Teacher",
+            "gender": "Male"
+          }
+        ],
         "offers": {
           "@type": "Offer",
           "name": "Free Trial Class",
@@ -122,23 +121,12 @@ function Home() {
           "bestRating": "5",
           "worstRating": "1"
         }
-      },
-      {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [{
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": window.location.origin
-        }]
       }
     ])
     
     document.head.appendChild(schemaScript)
     
     return () => {
-      // Cleanup in one batch
       schemaScript.parentNode?.removeChild(schemaScript)
       metaUpdates.forEach(meta => {
         meta.parentNode?.removeChild(meta)
@@ -146,11 +134,17 @@ function Home() {
     }
   }, [])
 
+  const heroImage = useMemo(() => ({
+    src: 'https://qurantutorsacademy.com/wp-content/uploads/2024/08/Quran-Tutor-Academy.png',
+    alt: 'Student learning Quran online with certified teacher',
+    width: 500,
+    height: 300
+  }), [])
+
   return (
     <div className="relative overflow-hidden">
       <header role="banner">
         <section className="relative isolate overflow-hidden bg-gradient-to-b from-purple-950/40 via-[#0a0a0f] to-[#0f0f15] px-4 pb-20 pt-28 md:px-6 lg:px-8">
-          {/* Optimized background layers */}
           <div className="absolute inset-0">
             <div 
               className="absolute inset-0 bg-cover bg-center opacity-10"
@@ -168,15 +162,17 @@ function Home() {
             <div className="relative z-10 max-w-2xl space-y-6">
               <div className="inline-flex items-center gap-2 rounded-full bg-purple-500/10 border border-purple-400/30 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-purple-200 backdrop-blur-sm">
                 <Sparkles size={14} aria-hidden="true" />
-                <strong>One-day free trial for all students</strong>
+                <strong>Three-day free trial for all students</strong>
               </div>
               
+              {/* UPDATED H1: Removed "Female" */}
               <h1 className="text-3xl font-bold leading-tight text-white sm:text-4xl lg:text-5xl">
-                Learn Quran Online with a Dedicated Female Quran Instructor
+                Learn Quran Online with Dedicated Quran Instructors
               </h1>
               
+              {/* UPDATED: Changed to "qualified teachers" */}
               <p className="text-lg text-slate-300">
-                Flexible timings, certified female teacher, affordable monthly fee, one-day free trial
+                Flexible timings, certified teachers, affordable monthly fee, Three-day free trial
                 for all students. Live 1-to-1 classes for kids, adults, and reverts worldwide.
               </p>
               
@@ -213,10 +209,11 @@ function Home() {
                 </div>
               </Suspense>
               
+              {/* UPDATED: First item changed to "Qualified Teachers" */}
               <ul className="grid grid-cols-2 gap-4 text-sm text-slate-300 sm:flex sm:flex-row sm:items-center sm:gap-6" aria-label="Key features">
                 <li className="flex items-center gap-2">
                   <CheckBadgeIcon className="h-5 w-5 text-purple-400" aria-hidden="true" />
-                  Female Hafiza instructor
+                  Qualified Teachers
                 </li>
                 <li className="flex items-center gap-2">
                   <Clock className="text-purple-400" size={18} aria-hidden="true" />
@@ -253,10 +250,10 @@ function Home() {
             >
               <div className="overflow-hidden rounded-3xl border border-purple-500/30 bg-white/5 shadow-2xl shadow-purple-900/40 backdrop-blur-sm">
                 <img
-                  src="https://qurantutorsacademy.com/wp-content/uploads/2024/08/Quran-Tutor-Academy.png"
-                  alt="Student learning Quran online with teacher"
-                  width="500"
-                  height="300"
+                  src={heroImage.src}
+                  alt={heroImage.alt}
+                  width={heroImage.width}
+                  height={heroImage.height}
                   className="h-72 w-full object-cover"
                   loading="lazy"
                   decoding="async"
@@ -269,12 +266,13 @@ function Home() {
                   <p className="text-lg font-semibold text-white">
                     Personalized 1-to-1 sessions with progress tracking and weekly reports.
                   </p>
+                  {/* UPDATED: Changed tag text */}
                   <div className="flex items-center gap-3 text-sm text-slate-300">
                     <span className="rounded-full bg-purple-500/20 border border-purple-400/30 px-3 py-1 text-purple-200">
                       Kids & Adults
                     </span>
                     <span className="rounded-full bg-fuchsia-500/20 border border-fuchsia-400/30 px-3 py-1 text-fuchsia-200">
-                      Taught by Laraib
+                      Certified Teachers
                     </span>
                   </div>
                 </div>
@@ -322,8 +320,9 @@ function Home() {
               <h3 className="text-2xl font-bold text-white">
                 Structured Quran learning, compassionate teaching, real progress.
               </h3>
+              {/* UPDATED: Changed "female Hafiza" to "certified teachers" */}
               <p className="text-sm text-slate-400">
-                Our certified female Hafiza teaches with digital whiteboards, voice notes, and
+                Our certified teachers teach with digital whiteboards, voice notes, and
                 personalized feedback so every student learns at their own pace.
               </p>
               <ul className="grid gap-3 sm:grid-cols-2">

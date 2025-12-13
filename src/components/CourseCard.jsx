@@ -37,10 +37,7 @@ function CourseCard({ course, compact = false }) {
       </div>
 
       <div className="relative mt-6 flex items-center justify-between">
-        <div>
-          <p className="text-xs uppercase tracking-[0.2em] text-slate-400">Monthly fee</p>
-          <p className="text-2xl font-bold bg-linear-to-r from-violet-400 to-fuchsia-400 bg-clip-text text-transparent">{course.price}</p>
-        </div>
+        
         {!compact && (
           <Button as={Link} to="/signup">
             Enroll Now
