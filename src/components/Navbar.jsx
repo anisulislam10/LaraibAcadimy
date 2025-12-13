@@ -36,7 +36,7 @@ function Navbar() {
           </div>
         </Link>
 
-        <nav className="hidden items-center gap-1 md:flex">
+        <nav className="hidden items-center gap-2 md:flex">
           {links.map((link) => (
             <NavLink key={link.to} to={link.to} className={navLinkClasses} end>
               {link.label}
@@ -45,9 +45,7 @@ function Navbar() {
         </nav>
 
         <div className="hidden items-center gap-3 md:flex">
-          <span className="hidden items-center gap-1 rounded-full border border-purple-400/30 bg-purple-500/10 px-3 py-1 text-xs text-purple-200 lg:flex backdrop-blur-sm">
-            <Sparkles size={14} /> One-day free trial
-          </span>
+          
           <a
             href={whatsappUrl}
             target="_blank"
