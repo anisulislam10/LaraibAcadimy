@@ -3,7 +3,7 @@ import emailjs from '@emailjs/browser'
 import Button from '../components/Button'
 import courses from '../data/courses'
 
-const lectureModes = ['Google Meet', 'Zoom', 'Microsoft Teams']
+const lectureModes = ['Google Meet', 'Zoom', 'Microsoft Teams', 'Other']
 
 function Signup() {
   const [form, setForm] = useState({
