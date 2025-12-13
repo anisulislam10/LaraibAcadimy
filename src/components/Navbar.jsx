@@ -28,7 +28,11 @@ function Navbar() {
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 md:px-6 lg:px-8">
         <Link to="/" className="flex items-center gap-3">
           <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-linear-to-br from-violet-500 via-purple-500 to-fuchsia-500 text-white font-black shadow-lg shadow-purple-500/30 ring-2 ring-purple-500/20">
-            LOQA
+            <img 
+      src="/logo.jpeg" 
+      alt="Laraib Quran Academy Logo" 
+      className="h-full w-full object-object-cover rounded-2xl"
+    /> 
           </div>
           <div className="leading-tight">
             <p className="text-[22px] uppercase tracking-[0.25em] text-purple-400">Laraib</p>
