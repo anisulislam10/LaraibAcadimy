@@ -259,7 +259,7 @@ function Home() {
 
       <button
   onClick={openWhatsAppPopup}
-  className="fixed bottom-6 right-4 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-linear-to-r from-green-500 to-teal-500 text-white shadow-2xl shadow-green-500/50 transition hover:-translate-y-1 hover:shadow-green-500/70"
+  className="fixed bottom-18 right-4 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-linear-to-r from-green-500 to-teal-500 text-white shadow-2xl shadow-green-500/50 transition hover:-translate-y-1 hover:shadow-green-500/70"
   title="WhatsApp Inquiry - Laraib Online Quran Academy"
 >
   <MessageCircle size={24} />
