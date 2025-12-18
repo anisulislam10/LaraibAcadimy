@@ -41,7 +41,7 @@ function Contact() {
         "@type": "ContactPoint",
         "contactType": "customer support",
         "telephone": "+923265757534",
-        "email": "laraibonlinequranacadmy@gmail.com",
+        "email": "laraibonlineacadmy@gmail.com | support@laraibquranacademy.online",
         "contactOption": "TollFree",
         "areaServed": "Worldwide",
         "availableLanguage": ["English", "Urdu", "Arabic"],
@@ -127,7 +127,7 @@ function Contact() {
                 <Mail className="text-purple-400 flex-shrink-0" size={18} />
                 <div>
                   <p className="font-semibold text-white">Email Support</p>
-                  <p className="text-slate-300">laraibonlinequranacadmy@gmail.com</p>
+                  <p className="text-slate-300">laraibonlineacadmy@gmail.com | support@laraibquranacademy.online</p>
                   <p className="text-xs text-purple-300/70 mt-1">Response within 24 hours</p>
                 </div>
               </div>
@@ -277,7 +277,7 @@ function Contact() {
                 </div>
                 <div className="flex items-center gap-2">
                   <Mail size={14} className="text-blue-300" />
-                  <span><strong>Email:</strong> laraibonlinequranacadmy@gmail.com</span>
+                  <span><strong>Email:</strong> laraibonlineacadmy@gmail.com | support@laraibquranacademy.online</span>
                 </div>
               </div>
               <p className="text-xs text-purple-300/70 pt-2 border-t border-purple-500/20 mt-2">

@@ -210,7 +210,7 @@ function Support() {
                   <Mail size={18} className="text-blue-400" />
                   <div>
                     <p className="font-medium text-white">Email Support</p>
-                    <p className="text-slate-200">laraibonlinequranacadmy@gmail.com</p>
+                    <p className="text-slate-200">laraibonlineacadmy@gmail.com | support@laraibquranacademy.online</p>
                     <p className="text-xs text-blue-300/70 mt-1">Response: Within 24 hours</p>
                   </div>
                 </div>
