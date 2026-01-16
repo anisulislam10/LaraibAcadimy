@@ -7,6 +7,7 @@ import { CheckBadgeIcon } from '@heroicons/react/24/outline'
 // Regular imports
 import courses from '../data/courses'
 import testimonials from '../data/testimonials'
+import SimplePaymentAlert from './Warning'
 
 // Lazy load heavy components
 const Button = lazy(() => import('../components/Button'))
@@ -143,6 +144,7 @@ function Home() {
 
   return (
     <div className="relative overflow-hidden">
+      
       <header role="banner">
         <section className="relative isolate overflow-hidden bg-gradient-to-b from-purple-950/40 via-[#0a0a0f] to-[#0f0f15] px-4 pb-20 pt-28 md:px-6 lg:px-8">
           <div className="absolute inset-0">
@@ -168,6 +170,7 @@ function Home() {
               {/* UPDATED H1: Removed "Female" */}
               <h1 className="text-3xl font-bold leading-tight text-white sm:text-4xl lg:text-5xl">
                 Learn Quran Online with Dedicated Quran Instructors
+                
               </h1>
               
               {/* UPDATED: Changed to "qualified teachers" */}
@@ -192,6 +195,7 @@ function Home() {
                     variant="outline"
                     aria-label="View all Quran courses"
                   >
+                    
                     View Courses
                   </Button>
                   <Button 
@@ -273,6 +277,8 @@ function Home() {
                     </span>
                     <span className="rounded-full bg-fuchsia-500/20 border border-fuchsia-400/30 px-3 py-1 text-fuchsia-200">
                       Certified Teachers
+            <SimplePaymentAlert />
+
                     </span>
                   </div>
                 </div>
@@ -311,6 +317,7 @@ function Home() {
               ))}
             </Suspense>
           </div>
+          
         </section>
 
         <section className="bg-gradient-to-br from-purple-950/30 via-[#0a0a0f] to-[#0f0f15] py-14" aria-label="Why Choose Our Academy">
@@ -320,10 +327,13 @@ function Home() {
               <h3 className="text-2xl font-bold text-white">
                 Structured Quran learning, compassionate teaching, real progress.
               </h3>
+              
               {/* UPDATED: Changed "female Hafiza" to "certified teachers" */}
               <p className="text-sm text-slate-400">
                 Our certified teachers teach with digital whiteboards, voice notes, and
                 personalized feedback so every student learns at their own pace.
+            <SimplePaymentAlert />
+
               </p>
               <ul className="grid gap-3 sm:grid-cols-2">
                 {featureItems.map((item) => (
@@ -446,8 +456,10 @@ function Home() {
         title="WhatsApp Inquiry - Laraib Online Quran Academy"
       >
         <MessageCircle size={24} aria-hidden="true" />
+        
       </button>
     </div>
+    
   )
 }
 

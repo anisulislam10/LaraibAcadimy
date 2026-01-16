@@ -9,6 +9,7 @@ import Contact from './pages/Contact'
 import Support from './pages/Support'
 import Signup from './pages/Signup'
 import NotFound from './pages/NotFound'
+import SimplePaymentAlert from './pages/Warning'
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -21,6 +22,8 @@ function ScrollToTop() {
 function App() {
   return (
     <div className="min-h-screen bg-[#0a1711] text-slate-100">
+      <SimplePaymentAlert />
+
       <Navbar />
       <ScrollToTop />
       <main className="pt-20">
@@ -33,8 +36,11 @@ function App() {
           <Route path="/signup" element={<Signup />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
+        
       </main>
+      
       <Footer />
+
     </div>
   )
 }
