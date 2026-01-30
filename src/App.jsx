@@ -24,7 +24,7 @@ function App() {
     <div className="min-h-screen bg-[#0a1711] text-slate-100">
       <SimplePaymentAlert />
 
-      <Navbar />
+      {/* <Navbar />
       <ScrollToTop />
       <main className="pt-20">
         <Routes>
@@ -39,7 +39,7 @@ function App() {
         
       </main>
       
-      <Footer />
+      <Footer /> */}
 
     </div>
   )
