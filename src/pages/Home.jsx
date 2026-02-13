@@ -7,7 +7,7 @@ import { CheckBadgeIcon } from '@heroicons/react/24/outline'
 // Regular imports
 import courses from '../data/courses'
 import testimonials from '../data/testimonials'
-import SimplePaymentAlert from './Warning'
+// import SimplePaymentAlert from './Warning'
 
 // Lazy load heavy components
 const Button = lazy(() => import('../components/Button'))
@@ -277,7 +277,7 @@ function Home() {
                     </span>
                     <span className="rounded-full bg-fuchsia-500/20 border border-fuchsia-400/30 px-3 py-1 text-fuchsia-200">
                       Certified Teachers
-            <SimplePaymentAlert />
+            {/* <SimplePaymentAlert /> */}
 
                     </span>
                   </div>
@@ -332,7 +332,7 @@ function Home() {
               <p className="text-sm text-slate-400">
                 Our certified teachers teach with digital whiteboards, voice notes, and
                 personalized feedback so every student learns at their own pace.
-            <SimplePaymentAlert />
+            {/* <SimplePaymentAlert /> */}
 
               </p>
               <ul className="grid gap-3 sm:grid-cols-2">
